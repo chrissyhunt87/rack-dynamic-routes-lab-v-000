@@ -9,12 +9,12 @@ class Application
 
       item = Item.all.find{|i| i.name == item_name}
 
-      if item
-        resp.write "#{item.price}"
-        resp.status = 200
-      else
+      if !item
         resp.write "Item not found"
         resp.status = 400
+      elsif item
+        resp.write "#{item.price}"
+        resp.status = 200
       end
     else
       resp.write "Route not found"
