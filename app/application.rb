@@ -6,9 +6,16 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.params["item"]
-
+      item = nil
       
-
+      item = Item.items.find{|i| i.name == item_name}
+      
+      if item
+        item.price
+      else
+        resp.write "Item not found"
+        resp.status = ???
+      end
     else
       resp.write "Route not found"
       resp.status = 404
