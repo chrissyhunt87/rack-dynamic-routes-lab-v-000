@@ -8,7 +8,7 @@ class Application
       item_name = req.params["item"]
       item = nil
 
-      item = Item.items.find{|i| i.name == item_name}
+      item = Item.all.find{|i| i.name == item_name}
 
       if item
         resp.write "#{item.price}"
