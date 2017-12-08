@@ -5,9 +5,10 @@ class Application
     req = Rack::Response.new(env)
 
     if req.path.match(/items/)
-      item = req.params["item"]
-      if Item.items.includes?("#{item.name}")
-        
+      item_name = req.params["item"]
+
+      
+
     else
       resp.write "Route not found"
       resp.status = 404
