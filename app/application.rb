@@ -7,11 +7,12 @@ class Application
     if req.path.match(/items/)
       item_name = req.params["item"]
       item = nil
-      
+
       item = Item.items.find{|i| i.name == item_name}
-      
+
       if item
-        item.price
+        resp.write "#{item.price}"
+        resp.status = 
       else
         resp.write "Item not found"
         resp.status = ???
