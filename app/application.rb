@@ -6,7 +6,6 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.params["item"]
-      binding.pry
       item = Item.all.find{|i| i.name == item_name}
 
       if !item
