@@ -8,12 +8,14 @@ class Application
       item_name = req.params["item"]
       item = Item.all.find{|i| i.name == item_name}
 
-      if !item
-        resp.write "Item not found"
-        resp.status = 400
-      elsif item
+      if item
         resp.write "#{item.price}"
         resp.status = 200
+      else
+        resp.write "Item not found"
+        resp.status = 400
+      end
+
       end
     else
       resp.write "Route not found"
