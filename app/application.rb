@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       item_name = req.params["item"]
       item = nil
-
+      puts item
       item = Item.all.find{|i| i.name == item_name}
 
       if item
