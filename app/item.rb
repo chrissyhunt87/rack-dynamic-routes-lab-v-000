@@ -11,4 +11,5 @@ class Item
   def self.items
     @@items
   end
+  
 end
