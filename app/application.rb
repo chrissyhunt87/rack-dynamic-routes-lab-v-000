@@ -9,7 +9,7 @@ class Application
       puts item_name
       puts req.path
       item = Item.all.find{|i| i.name == item_name}
-
+      puts item
       if item
         resp.write "#{item.price}"
         resp.status = 200
