@@ -3,7 +3,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-
+    puts req.path
     if req.path.match(/items/)
       item_name = req.params["item"]
       item = nil
